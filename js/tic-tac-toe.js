@@ -1,5 +1,7 @@
+// A supprimer pour le devoir.
+
 alert("Base fonctionnelle");
 
-$(function() {
+$(function () {
     alert("JQuery fonctionnel");
 });
