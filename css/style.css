@@ -1,48 +1,326 @@
-/* Styles pour TicTacToe */
+/* Importation des polices Inder et Lacquer */
 
-/* Empecher les styles par défault du theme Twenty twenty-three*/
+@import url("https://fonts.googleapis.com/css2?family=Lacquer&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inder&display=swap");
 
-/* Chemin d'accès au style du theme : 
+/* Document */
 
-1) Apparence.
-2) Themes.
-3) Choisir Twenty twenty-three.
-4) Personnaliser.
-5) Page.
-6) Tic-Tac-Toe (titre de la page)
-7) Cliquer sur modifier (petit crayon à gauche)
-8) Cliquer sur le rond moitié blanc et moitié noir dans la barre en haut a droite.
-9) Cliquer sur CSS additionnel en bas du menu de droite.
-10) Copier le code CSS si bas :
-
-body
-    .is-layout-constrained
-    > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
-    max-width: 100vw !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-text-align: center;
+:root {
+    --orange: #f55208;
+    --skin: #faf7ef;
+    --grey: #e4e2dd;
+    --yellow: #ffff00;
 }
 
-.has-global-padding {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
+/* Sélecteur universel */
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.wp-site-blocks {
-    padding-top: 0 !important;
-padding-bottom : 0 !important;
+/* Police */
+
+h1 {
+    font-family: "Lacquer";
+    text-align: center;
 }
 
-.wp-block-template-part {
-    display: none;
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-family: "Inder";
 }
 
-
-.rouge {
-    color: red;
+.current-user {
+    font-family: "Inder";
+    font-size: 2rem;
+    margin-bottom: 3rem;
 }
 
-.bleu {
-    color: blue;
+/* Barre de navigation */
+
+.navbar {
+    display: grid;
+    width: 100%;
+    background-color: #000000;
+    margin-bottom: 5rem;
+}
+
+.navbar ul {
+    display: inherit;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+}
+
+.logo {
+    width: 8rem;
+    height: 8rem;
+}
+
+.slogan {
+    font-size: 2.4rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: "Lacquer";
+}
+
+.login-btn {
+    padding: 20px 50px;
+    border-radius: 5px;
+    background-color: var(--orange);
+    border: none;
+    color: #ffffff;
+    font-size: 1.6rem;
+}
+
+/* PAGE DU TIC-TAC-TOE ############################################################################## */
+
+/* Wrapper de la page */
+
+#tictactoe-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+/* Utilisateur courant. Information fournie par PHP. */
+
+/* Contenu principal - Main */
+
+/* Boite d'option de jeu */
+
+.gaming-mode-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "play-with-friends" "multiplayers";
+    color: #ffffff;
+    gap: 5rem;
+}
+
+.play-with-friends,
+.multiplayers {
+    width: 30rem;
+    height: 30rem;
+    background-color: #000000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.play-with-friends {
+    margin-left: auto;
+}
+
+.multiplayers {
+    margin-right: auto;
+}
+
+.title-box {
+    width: 54rem;
+    margin: auto;
+}
+
+.friends-play-img {
+    width: 10rem;
+    height: 10rem;
+    margin-top: 2.5rem;
+}
+
+.multiplayers-img {
+    width: 10rem;
+    height: 10rem;
+    margin-top: 1rem;
+}
+
+/* Titre principal Tic-tac-toe */
+
+.main-title {
+    margin: 4rem 0;
+    font-size: 5rem;
+    color: var(--orange);
+    font-weight: 200;
+}
+
+/* Tableau de jeu et paramètre */
+
+.gameboard {
+    width: 75%;
+    height: 30rem;
+    background-color: #000000;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.setting {
+    text-align: left;
+}
+
+.setting ul {
+    padding: 1rem;
+}
+
+.setting ul li:first-child {
+    color: #ffffff;
+    font-size: 2rem;
+    background: none;
+}
+
+.setting ul li {
+    display: inline-block;
+    margin: 1.2rem;
+}
+
+.setting ul li a {
+    color: #000000;
+    line-height: 5rem;
+    padding: 25px 40px;
+    background-color: var(--orange);
+    border-radius: 5px;
+    font-size: 1.6rem;
+}
+
+/* Bouton Règles du jeu */
+
+.gaming-rules {
+    font-size: 1.6rem;
+    color: #ffffff;
+    border: 0.1rem solid;
+    width: 10rem;
+    border-radius: 100px;
+    padding: 20px 40px;
+    display: block;
+    margin: 2rem auto;
+}
+
+/* Tic-Tac-Toe */
+
+/* Wrapper pour l'aire de jeu */
+
+div.gaming-area-wrapper {
+    margin: 5rem auto;
+}
+
+.current-player{
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+/* Cases */
+
+table {
+    margin: 2% auto;
+    border-collapse: collapse;
+}
+
+#table_game {
+    position: relative;
+    font-size: 120px;
+    margin: 1% auto;
+    border-collapse: collapse;
+}
+
+.td_game {
+    border: 4px solid var(--orange);
+    width: 150px;
+    height: 150px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.fixed {
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.td_list {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.th_list {
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.active-player {
+    color: #f55208;
+    text-decoration: underline;
+}
+
+/* Bouton Reset */
+
+#restart {
+    font-size: 3em;
+    width: 5em;
+    cursor: pointer;
+    margin: 2rem auto;
+    overflow: hidden;
+    border: 0.1rem solid #000000;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Titre bientôt en ligne */
+
+.coming-soon {
+    font-size: 2rem;
+    color: var(--orange);
+    text-transform: uppercase;
+    margin-top: 2rem;
+}
+
+/* Boite de présentation pour carte à collectionner */
+
+div.collecting-card {
+    width: 30rem;
+    height: 30rem;
+    background-color: #000000;
+    margin: 5rem auto;
+    border-radius: 10px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.collecting-card p {
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+
+div.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "x" "social" "team-logo";
+    background-color: #000000;
+    align-items: center;
+}
+
+.social-media-list li {
+    display: inline-block;
+    margin: 1.2rem;
 }
