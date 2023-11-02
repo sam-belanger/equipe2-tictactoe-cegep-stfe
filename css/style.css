@@ -1,0 +1,116 @@
+/* Réinitialiser les marges et les rembourrages par défaut */
+body, h1, button {
+  margin: 0;
+  padding: 0;
+}
+
+/* Appliquer un fond et une couleur de police au body */
+body {
+  background-color: #000000;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Styliser le conteneur principal */
+.container {
+  background-color: #ffd700;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 800px;
+}
+
+/* Styliser le titre */
+
+#player-text {
+  font-size: 36px;
+  color: #000000; 
+  text-transform: uppercase; /* Mettre en majuscules */
+  letter-spacing: 4px; /* Espacement des lettres */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Ombre du texte */
+}
+
+
+/* Styliser le jeu de Tic-Tac-Toe */
+#gameboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+/* Styliser les cases du jeu */
+.box {
+  width: 120px;
+  height: 120px;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  cursor: pointer;
+  color:#ffd700;
+}
+
+/* Styliser le bouton Restart */
+#restart-button {
+  background-color: #4CAF50; /* Couleur de fond */
+  color: #000000; /* Couleur du texte */
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 0 auto; /* Centre horizontalement */
+  display: block; /* Assurez-vous qu'il est sur une nouvelle ligne */
+  transition: background-color 0.3s; /* Ajouter une transition pour un effet de survol */
+
+}
+/* Positionner le bouton Restart en bas du conteneur */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre verticalement */
+  justify-content: center; /* Centre horizontalement */
+}
+
+/* Ajouter de l'espace entre la grille et le bouton Restart */
+#gameboard {
+  margin-bottom: 20px;
+}
+
+/* Styliser les noms des joueurs et les scores */
+#players {
+  display: flex;
+  justify-content: space-between; /* Les éléments s'étirent des deux côtés */
+  margin-bottom: 20px;
+}
+
+#player1, #player2 {
+  background-color: #ffd700;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  width: 200px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  margin-top: 15px;
+}
+
+#player1 p, #player2 p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.active{
+  font-weight: bold;
+}
+
+#score1, #score2 {
+  font-weight: bold;
+  font-size: 24px;
+  color: #4CAF50; /* Couleur de texte pour le score */
+}
+
