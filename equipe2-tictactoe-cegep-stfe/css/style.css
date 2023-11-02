@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Lacquer&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inder&family=Lacquer&display=swap");
+
+/* Réinitialiser les marges et les rembourrages par défaut */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Appliquer un fond et une couleur de police au body */
+body {
+    background-color: #151515;
+    text-align: center;
+    font-family: "Inder", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+/* Styliser le conteneur principal */
+.container {
+    background-color: #ee7600;
+    border: 2px solid #505050;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 800px;
+}
+
+/* Styliser le titre */
+
+#player-text {
+    font-family: "Lacquer", Arial, Helvetica, sans-serif;
+    font-size: 64px;
+    color: #000000;
+    text-transform: uppercase; /* Mettre en majuscules */
+    letter-spacing: 4px; /* Espacement des lettres */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Ombre du texte */
+}
+
+/* Styliser le jeu de Tic-Tac-Toe */
+#gameboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 30px 0;
+}
+
+/* Styliser les cases du jeu */
+.box {
+    width: 120px;
+    height: 120px;
+    background-color: #000000;
+    border: 2px solid #909090;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+/* Styliser le bouton Restart */
+#restart-button {
+    background-color: #ffffff; /* Couleur de fond */
+    color: #000000; /* Couleur du texte */
+    font-size: 20px;
+    padding: 20px 40px;
+    cursor: pointer;
+    margin: 0 auto; /* Centre horizontalement */
+    display: block; /* Assurez-vous qu'il est sur une nouvelle ligne */
+    font-weight: bold;
+    border: 2px solid #000000;
+    border-radius: 100px;
+}
+
+#restart-button:hover {
+    color: #ffffff;
+    background-color: #000000;
+    border-color: #ffffff;
+    transition: 0.32s ease;
+}
+/* Positionner le bouton Restart en bas du conteneur */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
+}
+
+/* Ajouter de l'espace entre la grille et le bouton Restart */
+#gameboard {
+    margin-bottom: 20px;
+}
+
+/* Styliser les noms des joueurs et les scores */
+#players {
+    display: flex;
+    justify-content: space-between; /* Les éléments s'étirent des deux côtés */
+    margin-bottom: 20px;
+}
+
+#player1,
+#player2 {
+    color: #ffffff;
+    background-color: #121212;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin: 30px 15px 0;
+}
+
+#player1 p,
+#player2 p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#score1,
+#score2 {
+    font-weight: bold;
+    font-size: 24px;
+    color: #ffde00; /* Couleur de texte pour le score */
+}
