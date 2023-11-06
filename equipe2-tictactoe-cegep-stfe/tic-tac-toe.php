@@ -10,7 +10,6 @@ Version: 0.1
 Author: Équipe 2 | Élise Ravo Oleg Samuel
 Author URI: https://dgilbert.ca
 */
-
 require_once(plugin_dir_path(__FILE__) . 'class.tic-tac-toe_admin.php' );
 
 add_shortcode( 'tic-tac-toe', 'showPage' );
