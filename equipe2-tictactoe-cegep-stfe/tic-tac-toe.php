@@ -7,7 +7,7 @@ Plugin Name: tic-tac-toe
 Plugin URI: https://example.com/
 Description: desc
 Version: 0.1
-Author: NOM DE L'ÉQUIPE
+Author: Équipe 2 | Élise Ravo Oleg Samuel
 Author URI: https://dgilbert.ca
 */
 
